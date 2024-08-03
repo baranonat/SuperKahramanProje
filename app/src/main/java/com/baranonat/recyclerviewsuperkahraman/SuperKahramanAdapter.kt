@@ -26,7 +26,8 @@ class SuperKahramanAdapter(val superKahramanListesi:ArrayList<SuperKahraman>):Re
         holder.binding.textView.text=superKahramanListesi[position].isim
 
         holder.itemView.setOnClickListener {
-       val action= MainFragmentDirections.actionMainFragmentToTanitimFragment(superKahramanListesi[position])
+            MySingleton.secilenKahraman=superKahramanListesi[position]
+      val action= MainFragmentDirections.actionMainFragmentToTanitimFragment()
             Navigation.findNavController(it).navigate(action)
 
         }

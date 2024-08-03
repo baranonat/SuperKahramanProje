@@ -32,15 +32,24 @@ class TanitimFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val secilenKahraman=MySingleton.secilenKahraman
         arguments?.let {
 
-          val isim = TanitimFragmentArgs.fromBundle(it).secilenKahraman.isim
-            binding.textViewIsim.text=isim
+
+            binding.textViewIsim.text=secilenKahraman!!.isim
+            binding.textView2Meslek.text=secilenKahraman.meslek
+            binding.imageView.setImageResource(secilenKahraman.gorsel)
+            /*
+            val isim = TanitimFragmentArgs.fromBundle(it).secilenKahraman.isim
+             binding.textViewIsim.text=isim
+
             val meslek = TanitimFragmentArgs.fromBundle(it).secilenKahraman.meslek
             binding.textView2Meslek.text=meslek
-        val gorsel =TanitimFragmentArgs.fromBundle(it).secilenKahraman.gorsel
-            binding.imageView.setImageResource(gorsel)
 
+            val gorsel =TanitimFragmentArgs.fromBundle(it).secilenKahraman.gorsel
+            binding.imageView.setImageResource(gorsel)
+*/
         }
 
 
