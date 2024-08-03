@@ -32,6 +32,17 @@ class TanitimFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        arguments?.let {
+
+          val isim = TanitimFragmentArgs.fromBundle(it).secilenKahraman.isim
+            binding.textViewIsim.text=isim
+            val meslek = TanitimFragmentArgs.fromBundle(it).secilenKahraman.meslek
+            binding.textView2Meslek.text=meslek
+        val gorsel =TanitimFragmentArgs.fromBundle(it).secilenKahraman.gorsel
+            binding.imageView.setImageResource(gorsel)
+
+        }
+
 
     }
     override fun onDestroyView() {

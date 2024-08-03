@@ -18,5 +18,9 @@
         android:id="@+id/tanitimFragment"
         android:name="com.baranonat.recyclerviewsuperkahraman.TanitimFragment"
         android:label="fragment_tanitim"
-        tools:layout="@layout/fragment_tanitim" />
+        tools:layout="@layout/fragment_tanitim" >
+        <argument
+            android:name="secilenKahraman"
+            app:argType="com.baranonat.recyclerviewsuperkahraman.SuperKahraman" />
+    </fragment>
 </navigation>
